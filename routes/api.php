@@ -14,6 +14,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::name('api.')->namespace('Api')->group(function () {
+    // Unprotected routes
+    Route::group(['middleware' => 'guest:api'], function () {
+        Route::namespace('Auth')->group(function () {
+            Route::post('login', 'LoginController')->name('login');
+            Route::post('register', 'RegisterController')->name('register');
+
+            // Password Reset Routes...
+            Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail');
+            Route::post('password/reset', 'ResetPasswordController@reset');
+        });
+    });
+
+    // Protected routes
+    Route::middleware('auth:api')->group(function () {
+        Route::namespace('Auth')->group(function () {
+            Route::get('me', 'MeController@me')->name('me');
+            Route::post('logout', 'LogoutController@logout')->name('logout');
+        });
+        Route::namespace('Projects')->group(function () {
+            Route::post('project/add', 'ProjectController@store')->name('project_add');
+        });
+
+    });
 });

@@ -1,10 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
 import ReactDOM from 'react-dom';
-// import App component
-import App from './components/App'
+import App from './router';
 
-// change the getElementId from example to app
-// render App component instead of Example
-if (document.getElementById('root')) {
-    ReactDOM.render(<App />, document.getElementById('root'));
-}
+import { AuthProvider } from './context/auth';
+
+ReactDOM.render(
+    <AuthProvider>
+        <App />
+    </AuthProvider>,
+    document.getElementById('app')
+);

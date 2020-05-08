@@ -12,22 +12,34 @@
     "devDependencies": {
         "@babel/preset-react": "^7.0.0",
         "axios": "^0.19.2",
-        "bootstrap": "^4.0.0",
+        "bootstrap": "^4.4.1",
         "browser-sync": "^2.26.7",
-        "browser-sync-webpack-plugin": "^2.0.1",
+        "browser-sync-webpack-plugin": "^2.2.2",
         "cross-env": "^7.0",
+        "eslint": "^4.19.1",
+        "eslint-config-standard": "^11.0.0",
+        "eslint-plugin-import": "^2.20.1",
+        "eslint-plugin-node": "^6.0.1",
+        "eslint-plugin-promise": "^3.8.0",
+        "eslint-plugin-react": "^7.18.3",
+        "eslint-plugin-standard": "^3.1.0",
         "jquery": "^3.2",
         "laravel-mix": "^5.0.1",
+        "laravel-mix-purgecss": "^5.0.0-rc.1",
         "lodash": "^4.17.13",
+        "nprogress": "^0.2.0",
         "popper.js": "^1.12",
         "react": "^16.2.0",
         "react-dom": "^16.2.0",
         "resolve-url-loader": "^3.1.0",
         "sass": "^1.15.2",
-        "sass-loader": "^8.0.0"
+        "sass-loader": "^8.0.0",
+        "whatwg-fetch": "^3.0.0"
     },
     "dependencies": {
+        "react-bootstrap": "^1.0.1",
         "react-datepicker": "^2.14.1",
-        "react-router": "^2.8.1"
+        "react-hook-form": "^5.6.1",
+        "react-router-dom": "^5.1.2"
     }
 }
